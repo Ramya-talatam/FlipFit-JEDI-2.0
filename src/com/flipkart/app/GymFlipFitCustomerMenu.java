@@ -1,10 +1,20 @@
 package com.flipkart.app;
+import java.util.*;
 
+import com.flipkart.bean.Gym;
 import com.flipkart.bean.User;
-import java.util.Scanner;
 
 public class GymFlipFitCustomerMenu {
+	
     public void displayMenu(User user, Scanner in) {
+    	List<Gym> gymList = new ArrayList<>();
+    	gymList.add(new Gym("Gold's Gym","New York"));
+    	gymList.add(new Gym("Planet Fitness","Los Angeles"));
+    	gymList.add(new Gym("Anytime Fitness", "Chicago"));
+    	gymList.add(new Gym("24 Hour Fitness", "Houston"));
+    	// Add more gyms as needed
+
+    	
         int menuOption = 1;
         do {
             System.out.println("\n\n ------ Customer Menu Options ------ ");
@@ -22,8 +32,7 @@ public class GymFlipFitCustomerMenu {
                 case 1:
                     System.out.println("GymID\tGymName\t\tLocation");
                     System.out.println("-----------------------------------------------------------");
-                    System.out.println("1\tGold's Gym\t\tNew York");
-                    System.out.println("2\tPlanet Fitness\t\tLos Angeles");
+                    gymList.forEach(gym -> System.out.println(gym.getGymID() + "\t" + gym.getGymName() + "\t" + gym.getLocation() + "\t\t" ));
                     break;
                 case 2:
                     System.out.println("\n********************* Available Slots ****************\n");

@@ -2,6 +2,8 @@ package com.flipkart.bean;
 
 public class Gym {
 	private static int idCounter = 1;
+	
+
 	private int gymID;
 	private String gymName;
 	private String location;
@@ -10,8 +12,21 @@ public class Gym {
 
 	public Gym() {
 		this.gymID = idCounter++;
+		
 	}
-
+	/**
+	 * @param gymID
+	 * @param gymName
+	 * @param location
+	 * @param noOfSeats
+	 * @param gymOwnerID
+	 */
+	public Gym(String gymName, String location) {
+		this.gymID = idCounter++;
+		this.gymName = gymName;
+		this.location = location;
+	}
+	
 	public int getGymID() {
 		return gymID;
 	}
